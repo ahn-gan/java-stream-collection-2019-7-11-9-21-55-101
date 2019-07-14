@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 public class MyMap {
 
     List<Integer> array;
@@ -20,11 +22,12 @@ public class MyMap {
     public List<Integer> getTriple() {
         return array.stream()
                 .map(val -> val * 3)
-                .collect(Collectors.toList());
+                .collect(toList());
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        return array.stream()
+                .map(a -> letters[a - 1]).collect(toList());
     }
 
     public List<String> mapLetters() {
